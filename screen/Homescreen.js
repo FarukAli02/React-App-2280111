@@ -6,11 +6,17 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
+  ScrollView
 } from "react-native";
 
 const { width } = Dimensions.get('window');
 
 const Home = ({ navigation }) => {
+  const handleLogout = () => {
+    // Implement your logout logic here (e.g., clearing JWT, redirecting to login)
+    navigation.replace('Login');
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -45,6 +51,10 @@ const Home = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Open the Inventory Scroll</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout} activeOpacity={0.7}>
+        <Text style={styles.logoutText}>Logout</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -54,14 +64,14 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',  // Dark background for sleek look
+    backgroundColor: '#121212',
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 20,
   },
 
   banner: {
-    width: width - 40, // full width minus padding
+    width: width - 40,
     height: 180,
     borderRadius: 20,
     marginBottom: 30,
@@ -70,8 +80,7 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 36,
     fontWeight: '900',
-    color: '#ff4081',  // A vibrant pink accent color
-    marginBottom: 8,
+    color: '#ff4081',
     fontFamily: 'Arial',
   },
 
@@ -102,4 +111,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
+
+  logoutButton: {
+    marginTop: 20,
+    backgroundColor: '#d32f2f',
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 30,
+    width: '70%',
+    alignItems: 'center',
+  },
+
+  logoutText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 18,
+  }
 });
