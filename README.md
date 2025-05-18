@@ -62,7 +62,7 @@ Anime Mart is a full-stack Anime Merchandise Store application with user authent
 ### 📌 Frontend Setup
 
 1. **Navigate to Frontend Directory:**
-
+// When downloaded->the name may differ as the folder itself is FrontEnd with a Backend folder inside
    ```bash
    cd anime-mart
    ```
