@@ -1,97 +1,119 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Anime Mart - Anime Merchandise Store
 
-# Getting Started
+## 📌 Project Overview
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Anime Mart is a full-stack Anime Merchandise Store application with user authentication, product management, category management, and inventory management. It features a secure authentication system using JWT and a responsive front-end built with React Native.
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+* User Authentication (Signup, Login) using JWT.
+* Manage Products, Categories, and Inventory.
+* Secure password hashing with bcrypt.
+* Interactive user interface in React Native.
+* RESTful API with Node.js and Express.
+* MySQL database with migrations using Knex.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🛠️ Setup Instructions
 
-# OR using Yarn
-yarn start
-```
+### 📌 Backend Setup
 
-## Step 2: Build and run your app
+1. **Clone Repository:**
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+   ```bash
+   git clone <repository_url>
+   cd backend
+   run install express sql sql2 cors knex dotenv
+   ```
 
-### Android
+2. **Install Dependencies:**
 
-```sh
-# Using npm
-npm run android
+   ```bash
+   npm install
+   ```
 
-# OR using Yarn
-yarn android
-```
+3. **Configure Environment:**
 
-### iOS
+   * Create a `.env` file in the root directory.
+   * Add the following variables:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+     ```env
+     PORT=3000
+     JWT_SECRET=your_jwt_secret
+     DB_HOST=localhost
+     DB_USER=root
+     DB_PASSWORD=
+     DB_NAME=anime_app
+     ```
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+4. **Run Migrations:**
 
-```sh
-bundle install
-```
+   ```bash
+   npx knex migrate:latest
+   ```
 
-Then, and every time you update your native dependencies, run:
+5. **Start Server:**
 
-```sh
-bundle exec pod install
-```
+   ```bash
+   npm start
+   ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### 📌 Frontend Setup
 
-```sh
-# Using npm
-npm run ios
+1. **Navigate to Frontend Directory:**
 
-# OR using Yarn
-yarn ios
-```
+   ```bash
+   cd anime-mart
+   ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+2. **Install Dependencies:**
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+   ```bash
+   npm install
+   ```
 
-## Step 3: Modify your app
+3. **Run the Application:**
 
-Now that you have successfully run the app, let's make changes!
+   ```bash
+   npx react-native run-android
+   ```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 📋 Sample User Credentials
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+* **Email:** [testuser@example.com](mailto:testuser@example.com)
+* **Password:** password123
 
-## Congratulations! :tada:
+---
 
-You've successfully run and modified your React Native App. :partying_face:
+## ⚡ Database Migration Instructions
 
-### Now what?
+1. **Ensure Knex is installed:**
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+   ```bash
+   npm install knex -g
+   ```
 
-# Troubleshooting
+2. **Run Migrations:**
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+   ```bash
+   npx knex migrate:latest
+   ```
 
-# Learn More
+3. **Rollback Migrations (if needed):**
 
-To learn more about React Native, take a look at the following resources:
+   ```bash
+   npx knex migrate:rollback
+   ```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+---
+
+## 🌐 Postman Collection Import Steps
+
+1. **Open Postman.**
+2. **Click on Import.**
+3. **Select Import File.**
+4. **Choose the Postman Collection file .**
+5. **Access all predefined API requests.**
